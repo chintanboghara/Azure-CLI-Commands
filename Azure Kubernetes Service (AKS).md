@@ -61,3 +61,44 @@ The following list describes some common use cases for AKS:
 - Develop on AKS with Helm.
 - Install the Kubernetes extension for Visual Studio Code to manage your workloads.
 - Leverage the features of Istio with the Istio-based service mesh add-on.
+
+## Azure Kubernetes Service (AKS) Automatic (Preview)
+
+**Applies to: ✔️ AKS Automatic (preview)**
+
+Azure Kubernetes Service (AKS) Automatic offers an experience that makes the most common tasks on Kubernetes fast and frictionless, while preserving the flexibility, extensibility, and consistency of Kubernetes. Azure takes care of your cluster setup, including node management, scaling, security, and preconfigured settings that follow AKS well-architected recommendations. Automatic clusters dynamically allocate compute resources based on your specific workload requirements and are tuned for running production applications.
+
+### Features of AKS Automatic (Preview)
+
+- **Production ready by default**: Clusters are preconfigured for optimal production use, suitable for most applications. They offer fully managed node pools that automatically allocate and scale resources based on your workload needs. Pods are bin packed efficiently, to maximize resource utilization.
+  
+- **Built-in best practices and safeguards**: AKS Automatic clusters have a hardened default configuration, with many cluster, application, and networking security settings enabled by default. AKS automatically patches your nodes and cluster components while adhering to any planned maintenance schedules.
+
+- **Code to Kubernetes in minutes**: Go from a container image to a deployed application that adheres to best practices patterns within minutes, with access to the comprehensive capabilities of the Kubernetes API and its rich ecosystem.
+
+## AKS Automatic and Standard Feature Comparison
+
+The following table provides a comparison of options that are available, preconfigured, and default in both AKS Automatic and AKS Standard. For more information on whether specific features are available in Automatic, you may need to check the documentation for that feature.
+
+| Feature                           | AKS Automatic               | AKS Standard                |
+|-----------------------------------|-----------------------------|-----------------------------|
+| Pre-configured features           | Always enabled, cannot be disabled or changed | Optional to configure, not enabled by default |
+| Default features                  | Configured by default, can be changed | Configured by default, can be changed |
+| Optional features                 | Not enabled by default, configurable | Not enabled by default, configurable |
+
+Pre-configured features are always enabled and you can't disable or change their settings. Default features are configured for you but can be changed. Optional features are available for you to configure and are not enabled by default.
+
+## Application Deployment, Monitoring, and Observability
+
+Application deployment can be streamlined using automated deployments from source control, which creates Kubernetes manifests and generates CI/CD workflows. Additionally, the cluster is configured with monitoring tools such as Managed Prometheus for metrics, Managed Grafana for visualization, and Container Insights for log collection.
+
+| Option                          | AKS Automatic                | AKS Standard                 |
+|---------------------------------|------------------------------|------------------------------|
+| **Application Deployment**      | Optional:                    | Optional:                    |
+|                                 | - Use automated deployments to containerize applications from source control, create Kubernetes manifests, and CI/CD workflows. | - Use automated deployments to containerize applications from source control, create Kubernetes manifests, and CI/CD workflows. |
+|                                 | - Create deployment pipelines using GitHub Actions for Kubernetes. | - Create deployment pipelines using GitHub Actions for Kubernetes. |
+|                                 | - Bring your own CI/CD pipeline. | - Bring your own CI/CD pipeline. |
+| **Monitoring, Logging, and Visualization** | Default:                      | Optional:                    |
+|                                 | - Managed Prometheus for metric collection when using Azure CLI or the Azure portal. | - Managed Prometheus for metric collection. |
+|                                 | - Managed Grafana for visualization when using Azure CLI or the Azure portal. | - Managed Grafana for visualization. |
+|                                 | - Container insights for log collection when using Azure CLI or the Azure portal. | - Container insights for log collection. |
