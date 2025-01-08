@@ -102,3 +102,44 @@ Application deployment can be streamlined using automated deployments from sourc
 |                                 | - Managed Prometheus for metric collection when using Azure CLI or the Azure portal. | - Managed Prometheus for metric collection. |
 |                                 | - Managed Grafana for visualization when using Azure CLI or the Azure portal. | - Managed Grafana for visualization. |
 |                                 | - Container insights for log collection when using Azure CLI or the Azure portal. | - Container insights for log collection. |
+
+## Node Management, Scaling, and Cluster Operations
+
+Node management is automatically handled without the need for manual node pool creation. Scaling is seamless, with nodes created based on workload requests. Additionally, features for workload scaling like Horizontal Pod Autoscaler (HPA), Kubernetes Event Driven Autoscaling (KEDA), and Vertical Pod Autoscaler (VPA) are enabled. Clusters are configured for automatic node repair, automatic cluster upgrades, and detection of deprecated Kubernetes standard API usage. You can also set a planned maintenance schedule for upgrades if needed.
+
+| Option                          | AKS Automatic                | AKS Standard                 |
+|---------------------------------|------------------------------|------------------------------|
+| **Node Management**             | Pre-configured: AKS Automatic manages the node pools using Node Autoprovisioning. | Default: You create and manage system and user node pools |
+|                                 |                              | Optional: AKS Standard manages user node pools using Node Autoprovisioning. |
+| **Scaling**                     | Pre-configured: AKS Automatic creates nodes based on workload requests using Node Autoprovisioning. | Default: Manual scaling of node pools. |
+|                                 | Horizontal Pod Autoscaler (HPA), Kubernetes Event Driven Autoscaling (KEDA), and Vertical Pod Autoscaler (VPA) are enabled on the cluster. | Optional: Cluster autoscaler, Node Autoprovisioning, Kubernetes Event Driven Autoscaling (KEDA), Vertical Pod Autoscaler (VPA) |
+| **Cluster Tier**                | Pre-configured: Standard tier cluster with up to 5,000 nodes and a cluster uptime Service Level Agreement (SLA). | Default: Free tier cluster with 10 nodes but can support up to 1,000 nodes. |
+|                                 |                              | Optional: Standard tier cluster with up to 5,000 nodes and a cluster uptime SLA, Premium tier cluster with up to 5,000 nodes, cluster uptime SLA, and long-term support. |
+| **Node Operating System**       | Pre-configured: Azure Linux | Default: Ubuntu |
+|                                 |                              | Optional: Azure Linux, Windows Server containers |
+
+## Security and Policies
+
+Cluster authentication and authorization use Azure Role-based Access Control (RBAC) for Kubernetes authorization and applications can use features like workload identity with Microsoft Entra Workload ID and OpenID Connect (OIDC) cluster issuer to have secure communication with Azure services. Deployment safeguards enforce Kubernetes best practices through Azure Policy controls and the built-in image cleaner removes unused images with vulnerabilities, enhancing image security.
+
+| Option                          | AKS Automatic                | AKS Standard                 |
+|---------------------------------|------------------------------|------------------------------|
+| **Cluster Authentication and Authorization** | Pre-configured: Azure RBAC for Kubernetes authorization for managing cluster authentication and authorization using Azure role-based access control. | Default: Local accounts. |
+|                                 | Optional: Azure RBAC for Kubernetes authorization, Kubernetes RBAC with Microsoft Entra integration | |
+| **Cluster Security**            | Pre-configured: API server virtual network integration enables network communication between the API server and the cluster nodes over a private network without requiring a private link or tunnel. | Optional: API server virtual network integration enables network communication between the API server and the cluster nodes over a private network without requiring a private link or tunnel. |
+| **Application Security**        | Pre-configured: Workload identity with Microsoft Entra Workload ID, OpenID Connect (OIDC) cluster issuer. | Optional: Workload identity with Microsoft Entra Workload ID, OpenID Connect (OIDC) cluster issuer. |
+| **Image Security**              | Pre-configured: Image cleaner to remove unused images with vulnerabilities. | Optional: Image cleaner to remove unused images with vulnerabilities. |
+| **Policy Enforcement**          | Pre-configured: Deployment safeguards that enforce Kubernetes best practices in your AKS cluster through Azure Policy controls. | Optional: Deployment safeguards enforce Kubernetes best practices in your AKS cluster through Azure Policy controls. |
+
+## Networking
+
+AKS Automatic clusters use managed Virtual Network powered by Azure CNI Overlay with Cilium for high-performance networking and robust security. Ingress is handled by managed NGINX using the application routing add-on, integrating seamlessly with Azure DNS and Azure Key Vault. Egress uses a managed NAT gateway for scalable outbound connections. Additionally, you have the flexibility to enable Azure Service Mesh (Istio) ingress or bring your own service mesh.
+
+| Option                          | AKS Automatic                | AKS Standard                 |
+|---------------------------------|------------------------------|------------------------------|
+| **Virtual Network**             | Pre-configured: Managed Virtual Network using Azure CNI Overlay powered by Cilium combines the robust control plane of Azure CNI with the data plane of Cilium to provide high-performance networking and security. | Default: Managed Virtual Network with kubenet. |
+| **Ingress**                     | Pre-configured: Managed NGINX using the application routing add-on with integrations for Azure DNS and Azure Key Vault. | Optional: Managed NGINX using the application routing add-on with integrations for Azure DNS and Azure Key Vault. |
+|                                 | Optional: Azure Service Mesh (Istio) ingress gateway, Bring your own ingress or gateway. | Optional: Azure Service Mesh (Istio) ingress gateway, Bring your own ingress or gateway. |
+| **Egress**                      | Pre-configured: AKS managed NAT gateway for a scalable outbound connection flow. | Default: Azure Load Balancer |
+|                                 | Optional: User-assigned NAT gateway, AKS managed NAT gateway. | Optional: User-assigned NAT gateway, AKS managed NAT gateway. |
+| **Service Mesh**                | Optional: Azure Service Mesh (Istio), Bring your own service mesh. | Optional: Azure Service Mesh (Istio), Bring your own service mesh. |
