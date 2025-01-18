@@ -26,8 +26,6 @@ The Azure CLI is a powerful tool for managing Azure resources from the command l
 22. [Azure Backup](#azure-backup)
 23. [Scripting and Automation](#scripting-and-automation)
 
----
-
 ## Installation and Setup
 
 ### Install Azure CLI
