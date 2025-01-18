@@ -55,8 +55,6 @@ az account set --subscription <subscription-id>
 az account list --output table
 ```
 
----
-
 ## Basic Commands
 
 ### Get Help
@@ -79,8 +77,6 @@ az provider list --output table
 az --version
 ```
 
----
-
 ## Resource Management
 
 ### Create a Resource Group
@@ -102,8 +98,6 @@ az group delete --name <resource-group-name> --yes
 ```bash
 az resource list --resource-group <resource-group-name> --output table
 ```
-
----
 
 ## Virtual Machines
 
@@ -141,8 +135,6 @@ az vm delete --resource-group <resource-group-name> --name <vm-name> --yes
 ```bash
 az vm show --resource-group <resource-group-name> --name <vm-name>
 ```
-
----
 
 ## Networking
 
@@ -192,8 +184,6 @@ az network nsg rule create \
   --destination-port-range 22
 ```
 
----
-
 ## Storage
 
 ### Create a Storage Account
@@ -227,8 +217,6 @@ az storage blob upload \
   --file <local-file-path>
 ```
 
----
-
 ## Identity and Access Management
 
 ### Create a Service Principal
@@ -257,8 +245,6 @@ az ad user create \
   --user-principal-name <upn>
 ```
 
----
-
 ## Monitoring and Diagnostics
 
 ### Enable Diagnostics on a VM
@@ -282,8 +268,6 @@ az monitor metrics alert create \
   --condition "avg Percentage CPU > 80" \
   --action email <email-address>
 ```
-
----
 
 ## Azure SQL Database
 
@@ -321,8 +305,6 @@ az sql server firewall-rule create \
   --end-ip-address <end-ip>
 ```
 
----
-
 ## Azure Cosmos DB
 
 ### Create a Cosmos DB Account
@@ -351,8 +333,6 @@ az cosmosdb sql container create \
   --resource-group <resource-group-name>
 ```
 
----
-
 ## Azure Key Vault
 
 ### Create a Key Vault
@@ -378,8 +358,6 @@ az keyvault secret show \
   --name <secret-name>
 ```
 
----
-
 ## Azure Functions
 
 ### Create a Function App with Custom Runtime
@@ -401,8 +379,6 @@ az functionapp deployment source config \
   --branch <branch-name> \
   --manual-integration
 ```
-
----
 
 ## Azure Container Instances (ACI)
 
@@ -429,8 +405,6 @@ az container attach \
   --name <container-name>
 ```
 
----
-
 ## Azure Logic Apps
 
 ### Create a Logic App
@@ -448,8 +422,6 @@ az logic workflow trigger \
   --name <logic-app-name> \
   --trigger-name <trigger-name>
 ```
-
----
 
 ## Azure Event Hubs
 
@@ -476,8 +448,6 @@ az eventhubs eventhub list \
   --namespace-name <namespace-name> \
   --output table
 ```
-
----
 
 ## Azure Service Bus
 
@@ -506,8 +476,6 @@ az servicebus queue send \
   --message-body "Hello, Service Bus!"
 ```
 
----
-
 ## Azure Cognitive Services
 
 ### Create a Cognitive Services Account
@@ -526,8 +494,6 @@ az cognitiveservices account keys list \
   --name <account-name> \
   --resource-group <resource-group-name>
 ```
-
----
 
 ## Azure IoT Hub
 
@@ -553,8 +519,6 @@ az iot device send-d2c-message \
   --device-id <device-id> \
   --data "Hello, IoT Device!"
 ```
-
----
 
 ## Azure Data Lake Storage
 
@@ -585,8 +549,6 @@ az storage fs file upload \
   --account-name <storage-account-name>
 ```
 
----
-
 ## Azure Policy
 
 ### Assign a Policy Definition
@@ -601,8 +563,6 @@ az policy assignment create \
 ```bash
 az policy assignment list --resource-group <resource-group-name> --output table
 ```
-
----
 
 ## Azure Blueprints
 
@@ -620,8 +580,6 @@ az blueprint publish \
   --version <version> \
   --management-group <management-group-id>
 ```
-
----
 
 ## Azure Backup
 
@@ -641,8 +599,6 @@ az backup protection enable-for-vm \
   --vm <vm-name> \
   --policy-name <policy-name>
 ```
-
----
 
 ## Scripting and Automation
 
