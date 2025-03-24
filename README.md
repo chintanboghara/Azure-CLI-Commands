@@ -2,35 +2,6 @@
 
 The `azure` CLI is a powerful tool for managing Azure resources directly from the command line.
 
-## Table of Contents
-
-1. [Installation and Setup](#installation-and-setup)
-2. [Basic Commands](#basic-commands)
-3. [Resource Management](#resource-management)
-4. [Virtual Machines](#virtual-machines)
-5. [Networking](#networking)
-6. [Storage](#storage)
-7. [Identity and Access Management](#identity-and-access-management)
-8. [Monitoring and Diagnostics](#monitoring-and-diagnostics)
-9. [Azure SQL Database](#azure-sql-database)
-10. [Azure Cosmos DB](#azure-cosmos-db)
-11. [Azure Key Vault](#azure-key-vault)
-12. [Azure Functions](#azure-functions)
-13. [Azure Container Instances (ACI)](#azure-container-instances-aci)
-14. [Azure Logic Apps](#azure-logic-apps)
-15. [Azure Event Hubs](#azure-event-hubs)
-16. [Azure Service Bus](#azure-service-bus)
-17. [Azure Cognitive Services](#azure-cognitive-services)
-18. [Azure IoT Hub](#azure-iot-hub)
-19. [Azure Data Lake Storage](#azure-data-lake-storage)
-20. [Azure Policy](#azure-policy)
-21. [Azure Blueprints](#azure-blueprints)
-22. [Azure Backup](#azure-backup)
-23. [Azure Kubernetes Service (AKS)](#azure-kubernetes-service-aks)
-24. [Azure App Service](#azure-app-service)
-25. [Azure Active Directory](#azure-active-directory)
-26. [Scripting and Automation](#scripting-and-automation)
-
 ## Installation and Setup
 
 ### Install Azure CLI
