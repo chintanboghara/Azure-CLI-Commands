@@ -1,6 +1,6 @@
 # Azure CLI Commands
 
-The Azure CLI is a powerful tool for managing Azure resources directly from the command line.
+The `azure` CLI is a powerful tool for managing Azure resources directly from the command line.
 
 ## Table of Contents
 
